@@ -6,7 +6,7 @@ Simple Dropbox Uploader
 20-rows dropbox uploader. Take from `stdin` and put to DropBox using API v2. 
 
 
-> #### :warning: I write Simple Dropbox Uploader mainly for my purposes, having found nothing like it. Not tested. If you are looking for a better project try [Dropbox Uploader](https://github.com/andreafabrizi/Dropbox-Uploader)
+> #### :warning: I write **Simple Dropbox Uploader** mainly for my purposes, having found nothing like it. Not tested. If you are looking for a better project try [Dropbox Uploader](https://github.com/andreafabrizi/Dropbox-Uploader)
 
 
 ## Setup
