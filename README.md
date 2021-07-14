@@ -12,12 +12,14 @@ Simple Dropbox Uploader
 ## Setup
 ```
 export SIMPLEDBUPLOAD_TOKEN=YouDropboxSecretToken
+docker pull massimorebuglio/simple-dropbox-uploader
 ```
 
 ## Examples
 
 ### Load text file
 ```
+
 echo 'Ciao!' >> ciao.txt
 cat ciao.txt | python3 app.py -n /ciao.txt
 ```
