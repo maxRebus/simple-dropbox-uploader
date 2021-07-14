@@ -50,4 +50,4 @@ if __name__ == '__main__':
 
         backup(sys.stdin.buffer, args['dropboxpathname'])
 
-        print("Done!")
+        print(f"Upload of {args['dropboxpathname']} Done!")
