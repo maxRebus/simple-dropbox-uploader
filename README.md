@@ -26,7 +26,8 @@ docker run -i massimorebuglio/simple-dropbox-uploader \
 #### Upload text file
 ```
 echo 'Ciao!' >> ciao.txt
-cat ciao.txt | sudo docker run -i massimorebuglio/simple-dropbox-uploader \
+cat ciao.txt | \
+  sudo docker run -i massimorebuglio/simple-dropbox-uploader \
   -n /ciao_on_dropbox.txt -t $SDU_DROPBOX_TOKEN
 ```
 
@@ -34,23 +35,23 @@ cat ciao.txt | sudo docker run -i massimorebuglio/simple-dropbox-uploader \
 ```
 echo 'Ciao!' >> ciao.txt
 cat ciao.txt | \
-sudo docker run -i massimorebuglio/simple-dropbox-uploader \
+  sudo docker run -i massimorebuglio/simple-dropbox-uploader \
   -n /ciao.backup.$(date +%F_%R).txt -t $SDU_DROPBOX_TOKEN 
 ```
 
 #### Backup folder
 ```
 tar -czvf - /path/to/folder | \
- sudo docker run -i massimorebuglio/simple-dropbox-uploader \
--n /ciao.backup.$(date +%F_%R).txt -t $SDU_DROPBOX_TOKEN 
+  sudo docker run -i massimorebuglio/simple-dropbox-uploader \
+  -n /ciao.backup.$(date +%F_%R).txt -t $SDU_DROPBOX_TOKEN 
 ```
 
 #### Backup mongodb running in a docker container
 ```
 sudo docker exec MONGO_CONTAINER_NAME \
-sh -c 'mongodump --authenticationDatabase admin -u MONGO_USERNAME -p MONGO_PASSWORD --archive' | \
- sudo docker run -i massimorebuglio/simple-dropbox-uploader \
- -n /mongo.backup.$(date +%F_%R).dump -t $SDU_DROPBOX_TOKEN 
+  sh -c 'mongodump --authenticationDatabase admin -u MONGO_USERNAME -p MONGO_PASSWORD --archive' | \
+  sudo docker run -i massimorebuglio/simple-dropbox-uploader \
+  -n /mongo.backup.$(date +%F_%R).dump -t $SDU_DROPBOX_TOKEN 
 ```
 
 
