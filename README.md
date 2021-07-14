@@ -16,12 +16,6 @@ docker pull massimorebuglio/simple-dropbox-uploader
 export SDU_DROPBOX_TOKEN=YourSecretToken
 ```
 
-## Usage
-```
-docker run -i massimorebuglio/simple-dropbox-uploader \
-  -n /ciao_on_dropbox.txt -t $SDU_DROPBOX_TOKEN
-```
-
 ## Examples
 
 #### Upload text file
