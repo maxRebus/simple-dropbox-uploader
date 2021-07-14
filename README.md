@@ -44,7 +44,7 @@ cat ciao.txt | \
 ```
 tar -czvf - /path/to/folder | \
   sudo docker run -i massimorebuglio/simple-dropbox-uploader \
-  -n /ciao.backup.$(date +%F_%R).txt -t $SDU_DROPBOX_TOKEN 
+  -n /folder.backup.$(date +%F_%R).tar.gz -t $SDU_DROPBOX_TOKEN 
 ```
 
 #### Backup mongodb running in a docker container
