@@ -3,7 +3,7 @@ Simple Dropbox Uploader
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-1-file 50-rows dropbox uploader. Take what you want from `stdin` and put to DropBox using API v2. 
+1-file 50-rows dropbox uploader. Take what you want from `stdin` and put to DropBox using API v2. Based on [this](https://github.com/dropbox/dropbox-sdk-python/tree/main/example/back-up-and-restore) dropbox-api example.
 
 
 > #### :warning: I write **Simple Dropbox Uploader** mainly for my purposes, having found nothing like it. Not tested. If you are looking for a better project try [Dropbox Uploader](https://github.com/andreafabrizi/Dropbox-Uploader)
