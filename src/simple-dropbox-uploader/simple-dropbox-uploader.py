@@ -31,8 +31,8 @@ if __name__ == '__main__':
     parser.add_argument('-t', '--dropboxtoken', help='Token', required=False)
     args = vars(parser.parse_args())
 
-    if 'token' in args:
-        TOKEN = args['token']
+    if 'dropboxtoken' in args:
+        TOKEN = args['dropboxtoken']
     elif f'{ENVVAR}' in os.environ:
         TOKEN = os.environ[f'{ENVVAR}']
     else:
