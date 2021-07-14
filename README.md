@@ -1,27 +1,29 @@
-# Useless API
+Simple Dropbox Uploader
+===
 
-Dummy project to test CI/CD docker pipeline.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Usage
+20-rows dropbox uploader. Take from `stdin` and put to DropBox using API v2. 
 
-* Edit `app.py` and push to main.
-* Check pipeline: https://github.com/ai4muse/useless_api/actions
 
-### Troubleshoot
+> #### :warning: I write Simple Dropbox Uploader mainly for my purposes, having found nothing like it. Not tested.
 
-#### Refresh dependency
 
-Windows:
-   ```
-   pip list --format=freeze > requirements.txt
-   wsl find requirements.txt -type f -exec sed -i 's/.post20210125/ /g' {} \;
-   ```
+## Setup
+```
+export SIMPLEDBUPLOAD_TOKEN=YouDropboxSecretToken
+```
 
-Linux:
-   ```
-   pip list --format=freeze > requirements.txt
-   find requirements.txt -type f -exec sed -i 's/.post20210125/ /g' {} \;
-   ```
-   
-Note: `wsl find... / find...` tricky fix a bad self-generated dependency of _setuptools_. 
-"# simple-dropbox-uploader" 
+## Examples
+
+### Load text file
+```
+echo 'Ciao!' >> ciao.txt
+cat ciao.txt | python3 app.py -n /ciao.txt
+```
+
+### Backup text file with datetime information
+```
+echo 'Ciao!' >> ciao.txt
+cat ciao.txt | python3 app.py -n /ciao.backup.$(date +%F_%R)
+```
