@@ -9,23 +9,36 @@ Simple Dropbox Uploader
 > #### :warning: I write **Simple Dropbox Uploader** mainly for my purposes, having found nothing like it. Not tested. If you are looking for a better project try [Dropbox Uploader](https://github.com/andreafabrizi/Dropbox-Uploader)
 
 
-## Setup
+## Install
 ```
-export SIMPLEDBUPLOAD_TOKEN=YouDropboxSecretToken
 docker pull massimorebuglio/simple-dropbox-uploader
+export SDU_DROPBOX_TOKEN=YourSecretToken
 ```
 
 ## Examples
 
-### Load text file
+### Upload text file
 ```
-
 echo 'Ciao!' >> ciao.txt
-cat ciao.txt | python3 app.py -n /ciao.txt
+cat ciao.txt | sudo docker run massimorebuglio/simple-dropbox-uploader -n /ciao_on_dropbox.txt --dropboxtoken $SDU_DROPBOX_TOKEN
 ```
 
 ### Backup text file with datetime information
 ```
 echo 'Ciao!' >> ciao.txt
-cat ciao.txt | python3 app.py -n /ciao.backup.$(date +%F_%R)
+cat ciao.txt | sudo docker run massimorebuglio/simple-dropbox-uploader -n /ciao.backup.$(date +%F_%R) --dropboxtoken $SDU_DROPBOX_TOKEN 
 ```
+
+### Backup mongodb running in a docker container
+```
+sudo docker exec MONGO_CONTAINER_NAME sh -c 'mongodump --authenticationDatabase admin -u MONGO_USERNAME -p MONGO_PASSWORD --archive' | sudo docker run massimorebuglio/simple-dropbox-uploader -n /ciao.backup.$(date +%F_%R) --dropboxtoken $SDU_DROPBOX_TOKEN 
+```
+
+
+
+
+
+
+
+
+
