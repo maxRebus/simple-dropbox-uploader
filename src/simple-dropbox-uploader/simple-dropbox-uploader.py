@@ -31,6 +31,9 @@ if __name__ == '__main__':
     parser.add_argument('-t', '--dropboxtoken', help='Token', required=False)
     args = vars(parser.parse_args())
 
+    if args['dropboxpathname'][0] != '/':
+        sys.exit("ERROR: Dropbox pathname must start with / Es: -f /filename.txt ")
+
     if 'dropboxtoken' in args:
         TOKEN = args['dropboxtoken']
     elif f'{ENVVAR}' in os.environ:
